@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software41.BackgroundCheck.Domain", "Software41.BackgroundCheck.Domain\Software41.BackgroundCheck.Domain.csproj", "{04D20ECB-58BB-41F7-A795-FD127FD9E870}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software41.BackgroundCheck.Repository", "Software41.BackgroundCheck.Repository\Software41.BackgroundCheck.Repository.csproj", "{F0AD3AF0-B1CE-4104-879E-BF580D3AB962}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software41.BackgroundCheck.Repository.EF", "Software41.BackgroundCheck.Repository.EF\Software41.BackgroundCheck.Repository.EF.csproj", "{7A39D241-9F3E-4C7C-8ACD-D960BC3A8F29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{04D20ECB-58BB-41F7-A795-FD127FD9E870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04D20ECB-58BB-41F7-A795-FD127FD9E870}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04D20ECB-58BB-41F7-A795-FD127FD9E870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0AD3AF0-B1CE-4104-879E-BF580D3AB962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0AD3AF0-B1CE-4104-879E-BF580D3AB962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0AD3AF0-B1CE-4104-879E-BF580D3AB962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0AD3AF0-B1CE-4104-879E-BF580D3AB962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A39D241-9F3E-4C7C-8ACD-D960BC3A8F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A39D241-9F3E-4C7C-8ACD-D960BC3A8F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A39D241-9F3E-4C7C-8ACD-D960BC3A8F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A39D241-9F3E-4C7C-8ACD-D960BC3A8F29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
