@@ -1,0 +1,35 @@
+﻿@using Software41.BackgroundCheck.Domain
+
+@model Applicant
+@{
+    ViewBag.Title = "Applicant";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+
+}
+
+@section Body {
+<div class="panel-heading">
+    @Html.Label(string.Format("Applicant - {0} {1}", Model.FirstName, Model.LastName));
+</div>
+<div class="panel-body">
+    @using (Html.BeginForm("Applicant", "Applicant"))
+    {
+        <div class="form-group">
+            <label>First Name</label>
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Middle Name</label>
+            @Html.TextBoxFor(m => m.MiddleNamme, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    }
+</div>
+}
