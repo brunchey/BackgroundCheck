@@ -8,6 +8,7 @@ namespace Software41.BackgroundCheck.Domain
 {
     public class AddressHistory
     {
+        public int AddressHistoryId { get; set; }
         public String Address1 { get; set; }
         public String Address2 { get; set; }
         public String City { get; set; }

@@ -8,6 +8,7 @@ namespace Software41.BackgroundCheck.Domain
 {
     public class EducationHistory
     {
+        public int EducationHistoryId { get; set; }
         public String SchoolName { get; set; }
         public SchoolType SchoolType { get; set; }
         public DateTime AttendedFrom { get; set; }

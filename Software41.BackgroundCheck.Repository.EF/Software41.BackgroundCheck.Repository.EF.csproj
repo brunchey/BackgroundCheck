@@ -46,12 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BackgroundCheckContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201408032349516_InitialMigration.cs" />
+    <Compile Include="Migrations\201408032349516_InitialMigration.Designer.cs">
+      <DependentUpon>201408032349516_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="EFApplicantRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Software41.BackgroundCheck.Domain\Software41.BackgroundCheck.Domain.csproj">
+      <Project>{04d20ecb-58bb-41f7-a795-fd127fd9e870}</Project>
+      <Name>Software41.BackgroundCheck.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Software41.BackgroundCheck.Repository\Software41.BackgroundCheck.Repository.csproj">
+      <Project>{f0ad3af0-b1ce-4104-879e-bf580d3ab962}</Project>
+      <Name>Software41.BackgroundCheck.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201408032349516_InitialMigration.resx">
+      <DependentUpon>201408032349516_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
