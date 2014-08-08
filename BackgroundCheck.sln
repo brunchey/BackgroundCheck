@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software41.BackgroundCheck.Domain", "Software41.BackgroundCheck.Domain\Software41.BackgroundCheck.Domain.csproj", "{04D20ECB-58BB-41F7-A795-FD127FD9E870}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software41.BackgroundCheck.Repository.EF", "Software41.BackgroundCheck.Repository.EF\Software41.BackgroundCheck.Repository.EF.csproj", "{7A39D241-9F3E-4C7C-8ACD-D960BC3A8F29}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software41.BackgroundCheck.Repository.EF.Tests", "Software41.BackgroundCheck.Repository.EF.Tests\Software41.BackgroundCheck.Repository.EF.Tests.csproj", "{95EC5CC9-FD5F-4A0C-BEBB-08522352B683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software41.BackgroundCheck.Web", "Software41.BackgroundCheck.Web\Software41.BackgroundCheck.Web.csproj", "{8F20C4B5-52CE-467F-A93B-FDA8E8802603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Software41.BackgroundCheck.Web.Tests", "Software41.BackgroundCheck.Web.Tests\Software41.BackgroundCheck.Web.Tests.csproj", "{B99272E7-3708-473C-853C-28FD383F2160}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{95EC5CC9-FD5F-4A0C-BEBB-08522352B683}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95EC5CC9-FD5F-4A0C-BEBB-08522352B683}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95EC5CC9-FD5F-4A0C-BEBB-08522352B683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F20C4B5-52CE-467F-A93B-FDA8E8802603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F20C4B5-52CE-467F-A93B-FDA8E8802603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F20C4B5-52CE-467F-A93B-FDA8E8802603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F20C4B5-52CE-467F-A93B-FDA8E8802603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B99272E7-3708-473C-853C-28FD383F2160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B99272E7-3708-473C-853C-28FD383F2160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B99272E7-3708-473C-853C-28FD383F2160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B99272E7-3708-473C-853C-28FD383F2160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

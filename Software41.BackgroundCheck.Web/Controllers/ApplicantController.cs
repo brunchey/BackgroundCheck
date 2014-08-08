@@ -12,10 +12,12 @@ namespace Software41.BackgroundCheck.Web.Controllers
     {
 
         private IApplicantRepository appRepo;
+        private IUnitOfWork unitOfWork;
         
-        public ApplicantController (IApplicantRepository applicantRepo)
+        public ApplicantController (IApplicantRepository applicantRepo, IUnitOfWork unitOfWork)
         {
-            appRepo = applicantRepo;
+            this.appRepo = applicantRepo;
+            this.unitOfWork = unitOfWork;
 
         }
     
@@ -23,19 +25,20 @@ namespace Software41.BackgroundCheck.Web.Controllers
         // GET: /Applicant/
         public ActionResult Index()
         {
-            var applicants = appRepo.GetApplicants();
+            var applicants = this.appRepo.GetAll();
             return View(applicants);
         }
 
         public ActionResult Applicant(int Id)
         {
-            return View(this.appRepo.GetApplicants().Where(a => a.Id == Id).FirstOrDefault());
+            return View(this.appRepo.FindBy(a => a.Id == Id));
         }
 
         [HttpPost]
         public ActionResult Applicant(Applicant applicant)
         {
-            this.appRepo.Save(applicant);
+            this.appRepo.Update(applicant);
+            this.unitOfWork.Commit();
             return RedirectToAction("Index");
         }
 

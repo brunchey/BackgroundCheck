@@ -11,11 +11,11 @@ namespace Software41.BackgroundCheck.Web.TestingFakes
     {
         private static List<Applicant> applicants = new List<Applicant>()
             {
-                new Applicant { Id = 1, FirstName = "Ben", LastName = "Runchey", MiddleNamme = "John"},
-                new Applicant { Id =2, FirstName = "David", LastName = "O'Brien", MiddleNamme = "Something Irish?"}
+                new Applicant { Id = 1, FirstName = "Ben", LastName = "Runchey", MiddleName = "John"},
+                new Applicant { Id =2, FirstName = "David", LastName = "O'Brien", MiddleName = "Something Irish?"}
             };
 
-        public IEnumerable<Applicant> GetApplicants()
+        public List<Applicant> GetAll()
         {
             return applicants;
         }
@@ -25,5 +25,25 @@ namespace Software41.BackgroundCheck.Web.TestingFakes
             applicants[applicants.FindIndex(a => a.Id == applicant.Id)] = applicant;
         }
 
+
+        public Applicant FindBy(System.Linq.Expressions.Expression<Func<Applicant, bool>> predicate)
+        {
+            return applicants.AsQueryable().Where(predicate).FirstOrDefault();
+        }
+
+        public void Add(Applicant applicant)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Applicant applicant)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Applicant applicant)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

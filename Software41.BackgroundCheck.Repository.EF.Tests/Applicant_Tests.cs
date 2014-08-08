@@ -12,7 +12,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
     [TestClass]
     public class Applicant_Tests
     {
-        [TestMethod,Ignore]
+        [TestMethod]
         public void Can_Save_Applicant()
         {
             //Arrange
@@ -22,7 +22,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
 
             //create our context and 'inject' it into the repository... hopefully this is exactly what
             //you'll want in the controller in terms of dependency injection
-            IApplicantContext context = new BackgroundCheckContext();
+            IUnitOfWork context = new BackgroundCheckContext();
             IApplicantRepository repository = new EFApplicantRepository(context);
             var applicant = DomainHelper.CreateApplicant(firstName, middleName, lastname);
             Applicant savedApplicant = null;
@@ -32,6 +32,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             {
 
                 repository.Add(applicant);
+                context.Commit();
                 savedApplicant = repository.FindBy(a => a.FirstName == firstName);
             }
             catch (Exception ex)
@@ -47,7 +48,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             Assert.AreEqual(savedApplicant.LastName, lastname);
         }
 
-        [TestMethod, Ignore]
+        [TestMethod]
         public void Can_Save_Applicant_EmploymentHistory()
         {
             //Arrange
@@ -59,7 +60,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
 
             //create our context and 'inject' it into the repository... hopefully this is exactly what
             //you'll want in the controller in terms of dependency injection
-            IApplicantContext context = new BackgroundCheckContext();
+            IUnitOfWork context = new BackgroundCheckContext();
             IApplicantRepository repository = new EFApplicantRepository(context);
             var applicant = DomainHelper.CreateApplicant(firstName, middleName, lastname);
             Applicant savedApplicant = null;
@@ -78,6 +79,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             {
                 //Act
                 repository.Add(applicant);
+                context.Commit();
                 savedApplicant = repository.FindBy(a => a.FirstName == firstName);
             }
             catch (Exception ex)
@@ -93,7 +95,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             Assert.AreEqual(applicant.EmploymentHistory[0].JobTitle, jobTitle);
         }
 
-        [TestMethod, Ignore]
+        [TestMethod]
         public void Can_Save_Applicant_EducationHistory_List()
         {
             //Arrange            
@@ -105,7 +107,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
 
             //create our context and 'inject' it into the repository... hopefully this is exactly what
             //you'll want in the controller in terms of dependency injection
-            IApplicantContext context = new BackgroundCheckContext();
+            IUnitOfWork context = new BackgroundCheckContext();
             IApplicantRepository repository = new EFApplicantRepository(context);
             var applicant = DomainHelper.CreateApplicant(firstName, middleName, lastname);
             Applicant savedApplicant = null;
@@ -136,6 +138,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             {
                 //Act
                 repository.Add(applicant);
+                context.Commit();
                 savedApplicant = repository.FindBy(a => a.FirstName == firstName);
             }
             catch (Exception ex)
@@ -151,7 +154,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             Assert.AreEqual(savedApplicant.AddressHistory[1].Address1, secondRecordAddress);
         }
 
-        [TestMethod,Ignore]
+        [TestMethod]
         public void Can_Save_Applicant_With_All_Histories_Populated()
         {
             //Arrange
@@ -161,7 +164,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
 
             //create our context and 'inject' it into the repository... hopefully this is exactly what
             //you'll want in the controller in terms of dependency injection
-            IApplicantContext context = new BackgroundCheckContext();
+            IUnitOfWork context = new BackgroundCheckContext();
             IApplicantRepository repository = new EFApplicantRepository(context);
             var applicant = DomainHelper.CreateApplicant(firstName, middleName, lastname);
             DomainHelper.AddAddressHistory(applicant, 2);
@@ -201,7 +204,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             //create our context and 'inject' it into the repository... hopefully this is exactly what
             //you'll want in the controller in terms of dependency injection
             string nameToFind = "David_X";
-            IApplicantContext context = new BackgroundCheckContext();
+            IUnitOfWork context = new BackgroundCheckContext();
             IApplicantRepository repository = new EFApplicantRepository(context);
             var applicant = repository.FindBy(a => a.FirstName == nameToFind);
 
@@ -212,6 +215,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             try
             {
                 repository.Delete(applicant);
+                context.Commit();
             }
             catch (Exception ex)
             {
