@@ -226,7 +226,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             Assert.AreEqual(savedApplicant.AddressHistory[1].Address1, secondRecordAddress);
         }
 
-        [TestMethod, Ignore]
+        [TestMethod,Ignore]
         public void CanSaveApplicantWithAllHistoriesPopulated_ExpectSuccess()
         {
             //Arrange
@@ -246,6 +246,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
             {
 
                 repository.Save(applicant);
+                context.Commit();
             }
             catch (Exception ex)
             {
@@ -267,7 +268,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
         /// Just go and manually inspect the history records associated with this;
         /// we'll build History repositories later if needed
         /// </summary>
-        [TestMethod, Ignore]
+        [TestMethod]
         public void CanRemoveApplicantAndHistory_ExpectSuccess()
         {
             //Arrange
@@ -291,7 +292,7 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
                 System.Diagnostics.Debug.Write(ex.StackTrace);
             }
 
-            var savedApplicant = repository.FindBy(a => a.FirstName == nameToFind);
+            var savedApplicant = repository.FindBy(a => a.FirstName == nameToFind).FirstOrDefault();
 
             //Assert
             Assert.IsNull(savedApplicant);
