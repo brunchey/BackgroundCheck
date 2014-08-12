@@ -8,7 +8,7 @@ using Software41.BackgroundCheck.Repository;
 
 namespace Software41.BackgroundCheck.Repository.EF
 {
-    public class BackgroundCheckContext:DbContext,IApplicantContext, IUnitOfWork
+    public class BackgroundCheckContext:DbContext, IUnitOfWork
     {
         public BackgroundCheckContext()
             : base("Software41.BackgroundCheckDb") { }
@@ -45,10 +45,6 @@ namespace Software41.BackgroundCheck.Repository.EF
                 .WithOptional()
                 .WillCascadeOnDelete(true);
         }
-        public IDbSet<Applicant> Applicant { get; set; }
-        public IDbSet<AddressHistory> AddressHistory { get; set; }
-        public IDbSet<EmploymentHistory> EmploymentHistory { get; set; }
-        public IDbSet<EducationHistory> EducationHistory { get; set; }
 
         public void Commit()
         {

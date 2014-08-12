@@ -31,13 +31,13 @@ namespace Software41.BackgroundCheck.Web.Controllers
 
         public ActionResult Applicant(int Id)
         {
-            return View(this.appRepo.FindBy(a => a.Id == Id));
+            return View(this.appRepo.FindById(Id));
         }
 
         [HttpPost]
         public ActionResult Applicant(Applicant applicant)
         {
-            this.appRepo.Update(applicant);
+            this.appRepo.Save(applicant);
             this.unitOfWork.Commit();
             return RedirectToAction("Index");
         }

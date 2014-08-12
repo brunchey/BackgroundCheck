@@ -7,10 +7,11 @@ namespace Software41.BackgroundCheck.Repository.EF.Tests
     public static class DomainHelper
     {
         #region Private Convenience Methods
-        public static Applicant CreateApplicant(string firstName,string middleName,string lastName)
+        public static Applicant CreateApplicant(string firstName,string middleName,string lastName,int id=0)
         {
             return new Applicant
             {
+                Id = id,
                 FirstName = firstName,
                 LastName = lastName,
                 MiddleName = middleName

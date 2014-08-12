@@ -50,7 +50,7 @@ namespace Software41.BackgroundCheck.Web.Tests
 
             var expectedApplicant = new Applicant { Id = 1, FirstName = "Ben", LastName = "Runchey", MiddleName = "John"};
 
-            mockApplicantRepo.Setup(m => m.FindBy(It.IsAny<Expression<Func<Applicant, bool>>>())).Returns(expectedApplicant);
+            mockApplicantRepo.Setup(m => m.FindById(It.IsAny<int>())).Returns(expectedApplicant);
             var appController = new ApplicantController(mockApplicantRepo.Object, mockUnitOfWork.Object);
 
             //act
@@ -70,7 +70,7 @@ namespace Software41.BackgroundCheck.Web.Tests
             var mockUnitOfWork = new Mock<IUnitOfWork>();
 
             Applicant nullApplicant = null;
-            mockApplicantRepo.Setup(m => m.FindBy(It.IsAny<Expression<Func<Applicant, bool>>>())).Returns(nullApplicant);
+            mockApplicantRepo.Setup(m => m.FindById(It.IsAny<int>())).Returns(nullApplicant);
             var appController = new ApplicantController(mockApplicantRepo.Object, mockUnitOfWork.Object);
 
             //act
@@ -88,7 +88,7 @@ namespace Software41.BackgroundCheck.Web.Tests
             var mockApplicantRepo = new Mock<IApplicantRepository>();
             var mockUnitOfWork = new Mock<IUnitOfWork>();
 
-            mockApplicantRepo.Setup(m => m.Update(It.IsAny<Applicant>()));
+            mockApplicantRepo.Setup(m => m.Save(It.IsAny<Applicant>()));
             var appController = new ApplicantController(mockApplicantRepo.Object, mockUnitOfWork.Object);
 
             //act

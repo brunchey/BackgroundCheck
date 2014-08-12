@@ -18,22 +18,29 @@ namespace Software41.BackgroundCheck.Repository.EF
         {
             this._context = (BackgroundCheckContext) context;
         }
-
-        public List<Applicant> GetAll()
+        public IEnumerable<Applicant> GetAll()
         {
-            return this._context.Set<Applicant>().ToList();
+            return this._context.Set<Applicant>();
         }
-        public Applicant FindBy(System.Linq.Expressions.Expression<Func<Applicant, bool>> predicate)
+        public IEnumerable<Applicant> FindBy(System.Linq.Expressions.Expression<Func<Applicant, bool>> predicate)
         {
-            return this._context.Set<Applicant>().Where(predicate).FirstOrDefault();
+            return this._context.Set<Applicant>().Where(predicate) as IEnumerable<Applicant>;
         }
-        public void Add(Applicant applicant)
+        public Applicant FindById(int id)
         {
-            this._context.Set<Applicant>().Add(applicant);
+            return this._context.Set<Applicant>().Where(a => a.Id == id).FirstOrDefault();
         }
-        public void Update(Applicant applicant)
+        public void Save(Applicant applicant)
         {
-            this._context.Entry(applicant).State = EntityState.Modified;
+            bool applicantIsNew = (applicant.Id == null || applicant.Id == 0) ? true:false;
+            if (applicantIsNew)
+            {
+                this._context.Set<Applicant>().Add(applicant);
+            }
+            else
+            {
+                this._context.Entry(applicant).State = EntityState.Modified;
+            }
         }
         public void Delete(Applicant applicant)
         {

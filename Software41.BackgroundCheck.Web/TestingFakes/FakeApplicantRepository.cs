@@ -45,5 +45,20 @@ namespace Software41.BackgroundCheck.Web.TestingFakes
         {
             throw new NotImplementedException();
         }
+
+        IEnumerable<Applicant> IApplicantRepository.GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Applicant> IApplicantRepository.FindBy(System.Linq.Expressions.Expression<Func<Applicant, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Applicant FindById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
