@@ -17,11 +17,6 @@ namespace Software41.BackgroundCheck.Web
     {
         public static void Configure()
         {
-            //would like to scan for components to load.
-            //most likely will have to add the list of components to the config file vs. dynamically loading all .dlls found in the 
-            //bin directory
-            //http://autofac.readthedocs.org/en/latest/register/scanning.html#scanning-for-modules
-
             var builder = new ContainerBuilder();
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
 
@@ -31,8 +26,6 @@ namespace Software41.BackgroundCheck.Web
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-            
-
 
         }
 
