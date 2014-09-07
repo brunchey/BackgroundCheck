@@ -41,7 +41,5 @@ namespace Software41.BackgroundCheck.Web.Controllers
             this.unitOfWork.Commit();
             return RedirectToAction("Index");
         }
-
-
     }
 }

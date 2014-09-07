@@ -6,12 +6,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section Scripts {
 
-}
 
 @section Body {
-    <div class="panel-heading">Applicant Summary</div>
+    <div ng-view>
+
+    </div>
+    @*<div class="panel-heading">Applicant Summary</div>
     <div class="panel-body">
         <table class="table table-striped table-condensed">
             <thead>
@@ -33,6 +34,11 @@
                 }
             </tbody>
         </table>
-    </div>
+    </div>*@
+}
+
+@section Scripts {
+    <script src="~/app/controllers/applicantsController.js"></script>
+    <script src="~/app/services/ApplicantsService.js"></script>
 }
 

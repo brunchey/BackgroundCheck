@@ -1,19 +1,23 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
 <!DOCTYPE html>
 
-<html>
+<html ng-app="backgroundCheckApp">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    @RenderSection("Scripts")
 </head>
 <body>
     @RenderSection("Body")
+
+    <!--scripts-->
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/app/backgroundCheckApp.js"></script>
+    @RenderSection("Scripts")
 </body>
 </html>
