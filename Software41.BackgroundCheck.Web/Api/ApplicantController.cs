@@ -21,8 +21,7 @@ namespace Software41.BackgroundCheck.Web.Api
             this.unitOfWork = unitOfWork;
         }
 
-        [HttpGet]
-        [Route("applicants")]
+        
         // GET api/<controller>
         public IEnumerable<Applicant> Get()
         {
