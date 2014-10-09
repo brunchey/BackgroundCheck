@@ -1,0 +1,19 @@
+﻿<a href="/">Applicants</a>
+<form name="applicantDetail" novalidate ng-submit="saveApplicant()">
+    <div class="panel-heading">Applicant - {{applicant.FirstName}} {{applicant.LastName}}</div>
+    <div class="panel-body">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" required ng-model="applicant.FirstName" />
+        </div>
+        <div class="form-group">
+            <label for="middleName">Middle Name</label>
+            <input id="middleName" type="text" required ng-model="applicant.MiddleName" />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" required ng-model="applicant.LastName" />
+        </div>
+        <button type="submit" class="btn btn-primary" ng-disabled="applicantDetail.$invalid || applicantDetail.$pristine">Save</button>
+    </div>
+</form>

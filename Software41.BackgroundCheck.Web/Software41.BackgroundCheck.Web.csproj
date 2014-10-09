@@ -123,9 +123,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\backgroundCheckApp.js" />
-    <Content Include="app\controllers\applicantsController.js" />
-    <Content Include="app\services\ApplicantsService.js" />
-    <Content Include="app\views\applicantsList.html" />
+    <Content Include="app\controllers\applicantController.js" />
+    <Content Include="app\services\applicantService.js" />
+    <Content Include="app\views\applicantDetail.html" />
+    <Content Include="app\views\applicantList.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

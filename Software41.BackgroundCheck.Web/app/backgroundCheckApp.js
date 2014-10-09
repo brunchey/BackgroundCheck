@@ -9,10 +9,18 @@ var backgroundCheckApp = angular.module('backgroundCheckApp', [
 backgroundCheckApp.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
-          .when('/', {
-              controller: 'applicantsController',
-              templateUrl: 'app/views/applicantsList.html'
-          });
+            .when('/', {
+                controller: 'applicantsController',
+                templateUrl: '../../app/views/applicantList.html'
+            })
+            .when('/applicant/:Id', {
+                controller: 'applicantController',
+                templateUrl: '../../app/views/applicantDetail.html'
+            })
+            .when('applicant/add', {
+                controller: 'applicantController',
+                templateUrl: '../../app/views/applicantDetail.html'
+            });
     }]);
 
 
